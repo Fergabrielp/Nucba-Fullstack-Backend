@@ -40,6 +40,7 @@ const express_1 = __importStar(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const config_1 = require("../config/config");
 const auth_1 = __importDefault(require("../routes/auth"));
+const product_1 = __importDefault(require("../routes/product"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -60,6 +61,7 @@ class Server {
     }
     routes() {
         this.app.use("/auth", auth_1.default);
+        this.app.use("/product", product_1.default);
     }
     middlewares() {
         this.app.use((0, cors_1.default)());

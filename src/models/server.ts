@@ -2,6 +2,7 @@ import express, { Express, json } from "express";
 import cors from "cors";
 import { dbConnection } from "../config/config";
 import authRoute from "../routes/auth";
+import productRoute from "../routes/product";
 
 export class Server {
   app: Express;
@@ -27,6 +28,7 @@ export class Server {
 
   routes(): void {
     this.app.use("/auth", authRoute);
+    this.app.use("/product", productRoute);
   }
 
   middlewares(): void {
