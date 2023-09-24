@@ -36,6 +36,7 @@ export class Server {
       cors({
         origin: "https://nucba-fullstack-frontend.vercel.app",
         methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+        allowedHeaders: ["Content-Type", "x-token"],
       })
     );
     this.app.use(json());
