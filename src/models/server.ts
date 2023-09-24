@@ -32,7 +32,7 @@ export class Server {
   }
 
   middlewares(): void {
-    this.app.use(cors());
     this.app.use(json());
+    this.app.use(cors());
   }
 }
