@@ -32,13 +32,7 @@ export class Server {
   }
 
   middlewares(): void {
-    this.app.use(
-      cors({
-        origin: "https://nucba-fullstack-frontend.vercel.app",
-        methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
-        allowedHeaders: ["Content-Type", "x-token"],
-      })
-    );
+    this.app.use(cors());
     this.app.use(json());
   }
 }
