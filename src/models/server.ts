@@ -35,6 +35,7 @@ export class Server {
     this.app.use(
       cors({ origin: "https://nucba-fullstack-frontend.vercel.app" })
     );
+    // this.app.use(cors({ origin: "http://localhost:5173" }));
     this.app.use(json());
   }
 }
