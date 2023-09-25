@@ -59,7 +59,6 @@ export const updateOneProduct = async (req: Request, res: Response) => {
   const userId: ObjectId = req.body.user._id;
   const { id } = req.params;
   const toUpdate = req.body;
-
   const productFound = await Product.findOne({ _id: id });
 
   if (productFound) {
