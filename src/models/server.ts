@@ -32,10 +32,6 @@ export class Server {
   }
 
   middlewares(): void {
-    this.app.use((req, res, next) => {
-      console.log(`Solicitud recibida desde: ${req.headers.origin}`);
-      next();
-    });
     this.app.use(
       cors({ origin: "https://nucba-fullstack-frontend.vercel.app" })
     );
