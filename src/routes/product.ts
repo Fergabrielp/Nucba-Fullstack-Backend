@@ -2,6 +2,7 @@ import { Router } from "express";
 import { validateToken } from "../middlewares/validateToken";
 import { isVerified } from "../middlewares/validateVerified";
 import {
+  getAllProducts,
   getProducts,
   createProduct,
   getOneProduct,
@@ -11,7 +12,8 @@ import {
 
 const router = Router();
 
-router.get("/", validateToken, getProducts);
+router.get("/all", validateToken, getAllProducts);
+router.get("/", [validateToken, isVerified], getProducts);
 router.post("/", [validateToken, isVerified], createProduct);
 router.get("/:id", [validateToken, isVerified], getOneProduct);
 router.put("/:id", [validateToken, isVerified], updateOneProduct);

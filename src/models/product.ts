@@ -6,7 +6,10 @@ export interface IProduct {
   thumbnail: string;
   shortDescription: string;
   description: string;
-  images: string;
+  platform: string;
+  genre: string;
+  price: number;
+  quantity: number;
 }
 
 const ProductSchema = new Schema<IProduct>({
@@ -40,13 +43,29 @@ const ProductSchema = new Schema<IProduct>({
     required: true,
   },
 
-  images: [
-    {
-      type: String,
-      default: "No images added",
-      required: true,
-    },
-  ],
+  platform: {
+    type: String,
+    default: "No platform added",
+    required: true,
+  },
+
+  genre: {
+    type: String,
+    default: "No genre added",
+    required: true,
+  },
+
+  price: {
+    type: Number,
+    default: 0,
+    required: true,
+  },
+
+  quantity: {
+    type: Number,
+    default: 0,
+    required: true,
+  },
 });
 
 const Product: Model<IProduct> = model<IProduct>("Product", ProductSchema);
